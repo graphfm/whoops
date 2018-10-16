@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "home_icon.png",
+      "filename" : "settings_icon_greyed.png",
       "scale" : "1x"
     },
     {

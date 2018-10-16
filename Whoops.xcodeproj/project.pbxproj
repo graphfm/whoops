@@ -11,6 +11,7 @@
 		572D6AFE216B514700E3BF14 /* AniaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D6AFD216B514700E3BF14 /* AniaViewController.swift */; };
 		572D6B05216FCC4400E3BF14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572D6B04216FCC4300E3BF14 /* Assets.xcassets */; };
 		572D6B07216FCF3C00E3BF14 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D6B06216FCF3C00E3BF14 /* StatisticsViewController.swift */; };
+		572D6B0921720E7500E3BF14 /* MQTTAzureClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D6B0821720E7500E3BF14 /* MQTTAzureClient.swift */; };
 		57E2DCFB216B4F0B00298825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E2DCFA216B4F0B00298825 /* AppDelegate.swift */; };
 		57E2DCFD216B4F0B00298825 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E2DCFC216B4F0B00298825 /* ViewController.swift */; };
 		57E2DD00216B4F0B00298825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E2DCFE216B4F0B00298825 /* Main.storyboard */; };
@@ -24,6 +25,8 @@
 		572D6AFD216B514700E3BF14 /* AniaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniaViewController.swift; sourceTree = "<group>"; };
 		572D6B04216FCC4300E3BF14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		572D6B06216FCF3C00E3BF14 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		572D6B0821720E7500E3BF14 /* MQTTAzureClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTAzureClient.swift; sourceTree = "<group>"; };
+		572D6B0A21769C5600E3BF14 /* WhoopsMLPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WhoopsMLPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		57E2DCF7216B4F0B00298825 /* Whoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E2DCFA216B4F0B00298825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57E2DCFC216B4F0B00298825 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				572D6AFC216B509800E3BF14 /* Whoops-bridging-header.h */,
+				572D6B0A21769C5600E3BF14 /* WhoopsMLPlayground.playground */,
 				57E2DCF9216B4F0B00298825 /* Whoops */,
 				57E2DCF8216B4F0B00298825 /* Products */,
 				48E1143811300BBB3DBA51B7 /* Pods */,
@@ -82,6 +86,7 @@
 				57E2DCFA216B4F0B00298825 /* AppDelegate.swift */,
 				572D6B06216FCF3C00E3BF14 /* StatisticsViewController.swift */,
 				57E2DCFC216B4F0B00298825 /* ViewController.swift */,
+				572D6B0821720E7500E3BF14 /* MQTTAzureClient.swift */,
 				572D6AFD216B514700E3BF14 /* AniaViewController.swift */,
 				57E2DCFE216B4F0B00298825 /* Main.storyboard */,
 				57E2DD06216B4F0D00298825 /* LaunchScreen.storyboard */,
@@ -219,6 +224,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				572D6B0921720E7500E3BF14 /* MQTTAzureClient.swift in Sources */,
 				57E2DD03216B4F0B00298825 /* Whoops.xcdatamodeld in Sources */,
 				572D6B07216FCF3C00E3BF14 /* StatisticsViewController.swift in Sources */,
 				57E2DCFD216B4F0B00298825 /* ViewController.swift in Sources */,
