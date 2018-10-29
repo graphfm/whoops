@@ -14,4 +14,5 @@ target 'Whoops' do
   pod 'AzureIoTuAmqp'
   pod 'AzureIoTHubClient'
   pod 'EVReflection'
+  pod 'RealmSwift'
 end

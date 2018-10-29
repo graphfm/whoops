@@ -8,6 +8,14 @@
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Roboto-Regular.ttf">
+            <string>Roboto-Regular</string>
+        </array>
+        <array key="gt-pressura-regular.ttf">
+            <string>GTPressura</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home-->
         <scene sceneID="tne-QT-ifu">
@@ -21,31 +29,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="swS-KL-z2V">
-                                <rect key="frame" x="16" y="581" width="47" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="START"/>
-                                <connections>
-                                    <action selector="start:" destination="BYZ-38-t0r" eventType="touchDown" id="Y4f-5V-Ht1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TCj-Uf-4Ro">
-                                <rect key="frame" x="110" y="580" width="39" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="STOP"/>
-                                <connections>
-                                    <action selector="stop:" destination="BYZ-38-t0r" eventType="touchDown" id="8ts-Ww-jmK"/>
-                                </connections>
-                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Illustration" highlightedImage="Illustration" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Byv-AQ-849">
-                                <rect key="frame" x="0.0" y="189" width="375" height="383"/>
+                                <rect key="frame" x="0.0" y="189" width="375" height="429"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIH-yi-x6z">
                                 <rect key="frame" x="16" y="64" width="343" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="35"/>
+                                <color key="textColor" name="grey"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="FullLogo" translatesAutoresizingMaskIntoConstraints="NO" id="v5v-E8-wwL">
@@ -65,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="1840.8" y="-132.68365817091455"/>
         </scene>
-        <!--View Controller-->
+        <!--Fall Detected-->
         <scene sceneID="UrW-Ev-XEL">
             <objects>
-                <viewController id="Dg7-lr-Gpa" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="fallDetected" id="Dg7-lr-Gpa" customClass="FallDetected" customModule="Whoops" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6vX-gG-fPt"/>
                         <viewControllerLayoutGuide type="bottom" id="kT8-Bq-ORc"/>
@@ -76,17 +68,99 @@
                     <view key="view" contentMode="scaleToFill" id="rVv-QP-O8a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="LogoR" translatesAutoresizingMaskIntoConstraints="NO" id="52q-eg-Jhj">
+                                <rect key="frame" x="0.0" y="28" width="375" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="A fall has been detected!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Hy-Kp-Kt1">
+                                <rect key="frame" x="16" y="98" width="251" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="25"/>
+                                <color key="textColor" name="red"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wro-Uz-DKT">
+                                <rect key="frame" x="51" y="278" width="270" height="80"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.64313725489999995" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
+                                <state key="normal" title="I FELL, I'M OK">
+                                    <color key="titleColor" name="grey"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fellButOK:" destination="Dg7-lr-Gpa" eventType="touchUpInside" id="8ch-o5-Vb5"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TtW-Qh-a3u">
+                                <rect key="frame" x="51.998966942149309" y="511.00000000000006" width="270.00000000000045" height="79.999999999999943"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="red"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
+                                <state key="normal" title="I FELL, I'M NOT OK">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="fellNeedsHelp:" destination="Dg7-lr-Gpa" eventType="touchUpInside" id="bac-7q-7UW"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OvB-7n-hEr">
+                                <rect key="frame" x="16" y="136" width="0.0" height="0.0"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eA7-BK-oEY">
+                                <rect key="frame" x="12" y="136" width="343" height="107"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" name="grey"/>
+                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                <string key="text">We detected a fall. Press the red button if you need help. Otherwise press one of the yellow buttons to let us know what happened.</string>
+                                <color key="textColor" name="red"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="12c-NL-Jel">
+                                <rect key="frame" x="51.998966942149309" y="373" width="270" height="79.999999999999972"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.86274509799999999" green="0.64313725489999995" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Roboto-Regular" family="Roboto" pointSize="25"/>
+                                <state key="normal" title="I DID NOT FALL">
+                                    <color key="titleColor" name="grey"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="didNotFall:" destination="Dg7-lr-Gpa" eventType="touchUpInside" id="tNv-aW-KHO"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" name="grey"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WM1-Cq-Ann" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2703" y="258"/>
+            <point key="canvasLocation" x="2765.5999999999999" y="109.29535232383809"/>
         </scene>
         <!--Settings-->
         <scene sceneID="idV-OJ-5i9">
             <objects>
-                <viewController title="Settings" id="SZb-xH-hlV" customClass="AniaViewController" customModule="Whoops" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Settings" id="SZb-xH-hlV" customClass="SettingViewController" customModule="Whoops" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zKh-w3-2kp"/>
                         <viewControllerLayoutGuide type="bottom" id="eUm-uI-evC"/>
@@ -95,25 +169,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-e1-pUA">
-                                <rect key="frame" x="16" y="105" width="343" height="30"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DJH-e1-pUA">
+                                <rect key="frame" x="16" y="241" width="343" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="textColor" name="primary"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" textContentType="tel"/>
+                                <color key="textColor" name="grey"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="40"/>
+                                <textInputTraits key="textInputTraits" keyboardType="phonePad" returnKeyType="done" textContentType="tel"/>
+                                <connections>
+                                    <action selector="editingDidEnd:" destination="SZb-xH-hlV" eventType="editingDidEnd" id="r9f-Z4-aw4"/>
+                                </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Emergency contact number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSO-pL-J7A">
-                                <rect key="frame" x="16" y="76" width="212" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Your persons phone number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSO-pL-J7A">
+                                <rect key="frame" x="16" y="212" width="228" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" name="primary"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="20"/>
+                                <color key="textColor" name="grey"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Detection mode" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Anv-bc-yGy">
+                                <rect key="frame" x="16" y="308" width="129" height="27"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="20"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NBR-06-5Bo">
+                                <rect key="frame" x="16" y="72" width="103" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="30"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="When you need assistance, every second counts. Add a phone numer of your loved one, we should contact in case of emergency" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4nG-Xv-vee">
+                                <rect key="frame" x="13" y="115" width="343" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="grey"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <pickerView contentMode="scaleToFill" semanticContentAttribute="playback" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSB-6m-ZSB">
+                                <rect key="frame" x="16" y="340" width="343" height="90"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" title="Settings" id="7uw-Uu-f7F"/>
                     <connections>
+                        <outlet property="modePicker" destination="ZSB-6m-ZSB" id="nmR-IS-Wa7"/>
+                        <outlet property="phoneNumber" destination="DJH-e1-pUA" id="aTp-eQ-2Mb"/>
                         <segue destination="Dg7-lr-Gpa" kind="presentation" id="iqr-Ov-lrc"/>
                     </connections>
                 </viewController>
@@ -147,9 +253,7 @@
         <scene sceneID="lhP-iu-1AR">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="XZq-Hd-0Qs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" image="Home Inactive" selectedImage="Home" id="5LJ-N9-ykX">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Home" image="Home Inactive" selectedImage="Home" id="5LJ-N9-ykX"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fU3-VM-Nka">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -172,7 +276,6 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pVR-Vo-T9Z" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Settings" image="Settings Inactive" selectedImage="Settings" id="SrH-vi-SGY">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                         <offsetWrapper key="titlePositionAdjustment" horizontal="0.0" vertical="0.0"/>
                     </tabBarItem>
                     <toolbarItems/>
@@ -193,9 +296,7 @@
         <scene sceneID="uKs-Sl-4VN">
             <objects>
                 <navigationController id="OzG-hE-4Vs" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Statistics" image="Statistics Inactive" selectedImage="Statistics" id="dxf-dL-WQg">
-                        <inset key="imageInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                    </tabBarItem>
+                    <tabBarItem key="tabBarItem" title="Statistics" image="Statistics Inactive" selectedImage="Statistics" id="dxf-dL-WQg"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="tOo-7C-bh9">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -219,33 +320,102 @@
                     <view key="view" contentMode="scaleToFill" id="EBY-B1-PV0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Statistics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cAF-C9-9cl">
+                                <rect key="frame" x="16" y="72" width="118" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="30"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Whoops! has been designed to detect falls and connect you to help in an instant. Here you can track you falls history." textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wMd-bt-6U5">
+                                <rect key="frame" x="13" y="115" width="343" height="76"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" name="grey"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fae-AO-ksz">
+                                <rect key="frame" x="344" y="234" width="15" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="evJ-o6-DsB">
+                                <rect key="frame" x="344" y="259" width="15" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vfg-cx-hjo">
+                                <rect key="frame" x="344" y="285" width="15" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Falls this week:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2My-ec-HUj">
+                                <rect key="frame" x="16" y="259" width="106" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Falls today:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cea-Xl-FiM">
+                                <rect key="frame" x="16" y="285" width="79" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total number of falls:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIf-FR-vxH">
+                                <rect key="frame" x="16" y="234" width="146" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="GTPressura" family="GT Pressura" pointSize="17"/>
+                                <color key="textColor" name="grey"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wmc-ke-oeo"/>
                     <connections>
+                        <outlet property="today" destination="vfg-cx-hjo" id="zPc-nk-gEk"/>
+                        <outlet property="total" destination="Fae-AO-ksz" id="Vuh-vD-xS0"/>
+                        <outlet property="week" destination="evJ-o6-DsB" id="1DO-ba-Afc"/>
                         <segue destination="Dg7-lr-Gpa" kind="presentation" id="mhY-iX-Sak"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cAj-9e-wdI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1841" y="1332"/>
+            <point key="canvasLocation" x="1840.8" y="1331.784107946027"/>
         </scene>
     </scenes>
     <resources>
-        <image name="FullLogo" width="4115" height="991"/>
-        <image name="Home" width="82" height="70"/>
-        <image name="Home Inactive" width="82" height="70"/>
-        <image name="Illustration" width="4510" height="4528"/>
-        <image name="Settings" width="75" height="70"/>
-        <image name="Settings Inactive" width="76" height="70"/>
-        <image name="Statistics" width="88" height="70"/>
-        <image name="Statistics Inactive" width="87" height="70"/>
+        <image name="FullLogo" width="987.5999755859375" height="237.83999633789062"/>
+        <image name="Home" width="40" height="40"/>
+        <image name="Home Inactive" width="40" height="40"/>
+        <image name="Illustration" width="1082.4000244140625" height="1086.719970703125"/>
+        <image name="LogoR" width="72.720001220703125" height="59.279998779296875"/>
+        <image name="Settings" width="40" height="40"/>
+        <image name="Settings Inactive" width="40" height="40"/>
+        <image name="Statistics" width="40" height="40"/>
+        <image name="Statistics Inactive" width="40" height="40"/>
+        <namedColor name="grey">
+            <color red="0.21176470588235294" green="0.20784313725490197" blue="0.21568627450980393" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="primary">
             <color red="0.98039215686274506" green="0.75686274509803919" blue="0.0078431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="red">
+            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O1f-gV-1R3"/>
+        <segue reference="mhY-iX-Sak"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="primary"/>
 </document>

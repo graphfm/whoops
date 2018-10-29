@@ -9,12 +9,13 @@
 import Foundation
 import CoreMotion
 import AzureIoTHubClient
+import UIKit
 
 class MQTTAzureClient {
     static let sharedInstance = MQTTAzureClient()
     var timer: Timer!
     //Put you connection string here
-    private let connectionString = "HostName=Whoops-IoT-Hub.azure-devices.net;DeviceId=iosApp;SharedAccessKey=JTUEX99no8j8oNcVT9C3ol4UlJ0/A8HyaIF6ByaRSZ8="
+    private let connectionString = "HostName=WhoopsIoTHubSecond.azure-devices.net;DeviceId=iosApp;SharedAccessKey=tVs45A8WyPKXUpI0KHAok2t6YbheGiID9Ox0Bi7UQK4="
     
     // Select your protocol of choice: MQTT_Protocol, AMQP_Protocol or HTTP_Protocol
     // Note: HTTP_Protocol is not currently supported
@@ -43,13 +44,15 @@ class MQTTAzureClient {
             
             return
         }
-        timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(dowork), userInfo: nil, repeats: true)
+    }
+    
+    func stopCollectingMotionData() {
+        self.motion.stopDeviceMotionUpdates()
+        timer.invalidate()
     }
     
     func disconnect() {
-        timer.invalidate()
         IoTHubClient_LL_Destroy(iotHubClientHandle)
-        self.motion.stopDeviceMotionUpdates()
     }
     
     /// Sends a message to the IoT hub
@@ -96,7 +99,6 @@ class MQTTAzureClient {
     // pointer to the class instance as in the function above.
     let myReceiveMessageCallback: IOTHUB_CLIENT_MESSAGE_CALLBACK_ASYNC = { message, userContext in
         
-        var mySelf: ViewController = Unmanaged<ViewController>.fromOpaque(userContext!).takeUnretainedValue()
         
         var messageId: String!
         var correlationId: String!
@@ -131,6 +133,12 @@ class MQTTAzureClient {
             let data = Data(bytes: buff!, count: size)
             messageString = String.init(data: data, encoding: String.Encoding.utf8)!
             
+            DispatchQueue.main.async {
+                let vc = UIApplication.shared.keyWindow?.rootViewController
+                
+                let fallDetected = vc?.storyboard?.instantiateViewController(withIdentifier: "fallDetected")
+                vc?.present(fallDetected!, animated: true, completion: nil)
+            }
             print("Message Id:", messageId, " Correlation Id:", correlationId)
             print("Message:", messageString)
         }
@@ -142,28 +150,26 @@ class MQTTAzureClient {
     
     func startCollectingMotionData() {
         if motion.isDeviceMotionAvailable {
-            self.motion.deviceMotionUpdateInterval = 1.0 / 200.0
+            self.motion.deviceMotionUpdateInterval = 1.0 / 100.0
             self.motion.showsDeviceMovementDisplay = true
-            self.motion.startDeviceMotionUpdates(using: .xMagneticNorthZVertical,
-                                                 to: self.queue, withHandler: { (data, error) in
-                                                    // Make sure the data is valid before accessing it.
+            self.motion.startDeviceMotionUpdates(to: self.queue, withHandler: { (data, error) in
                                                     if let validData = data {
-                                                        // Get the attitude relative to the magnetic north reference frame.
                                                         let gx = validData.rotationRate.x
                                                         let gy = validData.rotationRate.y
                                                         let gz = validData.rotationRate.z
-                                                        let ax = validData.gravity.x
-                                                        let ay = validData.gravity.y
-                                                        let az = validData.gravity.z
+                                                        let ax = validData.gravity.x + validData.userAcceleration.x
+                                                        let ay = validData.gravity.y + validData.userAcceleration.y
+                                                        let az = validData.gravity.z + validData.userAcceleration.z
                                                         let gyroMag = sqrt(pow(gx, 2) + pow(gy, 2) + pow(gz, 2))
                                                         let accMag = sqrt(pow(ax, 2) + pow(ay, 2) + pow(az, 2))
                                                         
-                                                        let data = String(format:"{\"mag_acc\": %f, \"mag_gyro\": %f, \"acc_x\": %f, \"acc_y\": %f, \"acc_z\": %f, \"gyro_x\": %f, \"gyro_y\": %f, \"gyro_z\": %f,  }", accMag, gyroMag, ax, ay, az, gx, gy, gz)
-                                                        
+                                                        let data = String(format:"{\"device_id\": \"iosApp\",\"mag_acc\": %f, \"mag_gyro\": %f, \"acc_x\": %f, \"acc_y\": %f, \"acc_z\": %f, \"gyro_x\": %f, \"gyro_y\": %f, \"gyro_z\": %f }", accMag, gyroMag, ax, ay, az, gx, gy, gz)
+//                                                        print(data)
                                                             self.sendMessage(motionData: data)
                                                     }
             
             })
+            timer = Timer.scheduledTimer(timeInterval: 1.5, target: self, selector: #selector(dowork), userInfo: nil, repeats: true)
         }
     }
 }

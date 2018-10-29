@@ -2,15 +2,21 @@
 // Licensed under the MIT license. See LICENSE file in the project root for full license information.
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let onDeviceClassification = OnDeviceClassification.sharedInstance
+    let mqttClient = MQTTAzureClient.sharedInstance
+    let realm = try! Realm()
+    var mode = "native"
 
     var window: UIWindow?
 
 
     private func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
         return true
     }
 
@@ -29,11 +35,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+        
+        let modeSetting = realm.object(ofType: Setting.self, forPrimaryKey: "mode")
+        self.mode = (modeSetting != nil) ? modeSetting!.value : "native"
+        if (self.mode == "native") {
+            onDeviceClassification.startCollectingMotionData()
+        } else {
+                        mqttClient.connectToAzure()
+                        mqttClient.startCollectingMotionData()
+        }
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        if (self.mode == "native") {
+            onDeviceClassification.stopCollectingMotionData()
+        } else {
+            mqttClient.stopCollectingMotionData()
+            mqttClient.disconnect()
+        }
     }
 
 

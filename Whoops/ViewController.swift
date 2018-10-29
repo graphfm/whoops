@@ -5,13 +5,17 @@ import UIKit
 import AzureIoTHubClient
 import Foundation
 import CoreMotion
+import RealmSwift
 
 
 class ViewController: UIViewController {
-    let mqttClient = MQTTAzureClient.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        addNavbarImage()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
     }
     
     override func didReceiveMemoryWarning() {
@@ -34,26 +38,24 @@ class ViewController: UIViewController {
     ///
     /// - parameter sender: The clicked button
     @IBAction func start(_ sender: UIButton) {
-        mqttClient.connectToAzure()
-        mqttClient.startCollectingMotionData()
+//        onDeviceClassification.startCollectingMotionData()
     }
     
     /// Called when the stop button is clicked on the UI. Stops sending messages and cleans up.
     ///
     /// - parameter sender: The clicked button
     @IBAction func stop(_ sender: UIButton) {
-        mqttClient.disconnect()
     }
     
     func addNavbarImage() {
         let navController = navigationController!
 
-        let image = #imageLiteral(resourceName: "outline_directions_run_black_24dp.png")
+        let image = #imageLiteral(resourceName: "LogoY")
 
         let imageView = UIImageView(image: image)
 
         let bannerWidth = navController.navigationBar.frame.size.width
-        let bannerHeight = navController.navigationBar.frame.size.height
+        let bannerHeight = navController.navigationBar.frame.size.height - 15
 
         let bannerX = bannerWidth / 2 - image.size.width / 2
         let bannerY = bannerHeight / 2 - image.size.height / 2

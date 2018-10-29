@@ -8,10 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		44F78CE6E01639B3A7AAAEE5 /* Pods_Whoops.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 609DEC35FFB2FB77D82CC7B0 /* Pods_Whoops.framework */; };
-		572D6AFE216B514700E3BF14 /* AniaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D6AFD216B514700E3BF14 /* AniaViewController.swift */; };
-		572D6B05216FCC4400E3BF14 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 572D6B04216FCC4300E3BF14 /* Assets.xcassets */; };
+		572D6AFE216B514700E3BF14 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D6AFD216B514700E3BF14 /* SettingViewController.swift */; };
 		572D6B07216FCF3C00E3BF14 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D6B06216FCF3C00E3BF14 /* StatisticsViewController.swift */; };
 		572D6B0921720E7500E3BF14 /* MQTTAzureClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572D6B0821720E7500E3BF14 /* MQTTAzureClient.swift */; };
+		57CCF2AC2184B8160004A911 /* Whoops.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 57CCF2AB2184B8160004A911 /* Whoops.mlmodel */; };
+		57CCF2AE2184BBDF0004A911 /* OnDeviceClassification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCF2AD2184BBDF0004A911 /* OnDeviceClassification.swift */; };
+		57CCF2B02184CA000004A911 /* MotionData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCF2AF2184CA000004A911 /* MotionData.swift */; };
+		57CCF2B22184D0BC0004A911 /* FallDetected.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCF2B12184D0BC0004A911 /* FallDetected.swift */; };
+		57CCF2B42184F2FF0004A911 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57CCF2B32184F2FF0004A911 /* Assets.xcassets */; };
+		57CCF2B72184F94F0004A911 /* Fall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCF2B62184F94F0004A911 /* Fall.swift */; };
+		57CCF2B92184F9A50004A911 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCF2B82184F9A50004A911 /* Setting.swift */; };
+		57CCF2BB21850D740004A911 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57CCF2BA21850D740004A911 /* DateExtension.swift */; };
+		57CCF2BD218620CA0004A911 /* gt-pressura-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57CCF2BC218620CA0004A911 /* gt-pressura-regular.ttf */; };
+		57CCF2BF218620D60004A911 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57CCF2BE218620D60004A911 /* Roboto-Regular.ttf */; };
 		57E2DCFB216B4F0B00298825 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E2DCFA216B4F0B00298825 /* AppDelegate.swift */; };
 		57E2DCFD216B4F0B00298825 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57E2DCFC216B4F0B00298825 /* ViewController.swift */; };
 		57E2DD00216B4F0B00298825 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57E2DCFE216B4F0B00298825 /* Main.storyboard */; };
@@ -22,11 +31,20 @@
 /* Begin PBXFileReference section */
 		0D855C6A540487B76B460F53 /* Pods-Whoops.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Whoops.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Whoops/Pods-Whoops.debug.xcconfig"; sourceTree = "<group>"; };
 		572D6AFC216B509800E3BF14 /* Whoops-bridging-header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Whoops-bridging-header.h"; sourceTree = "<group>"; };
-		572D6AFD216B514700E3BF14 /* AniaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AniaViewController.swift; sourceTree = "<group>"; };
-		572D6B04216FCC4300E3BF14 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		572D6AFD216B514700E3BF14 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		572D6B06216FCF3C00E3BF14 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
 		572D6B0821720E7500E3BF14 /* MQTTAzureClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MQTTAzureClient.swift; sourceTree = "<group>"; };
 		572D6B0A21769C5600E3BF14 /* WhoopsMLPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = WhoopsMLPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		57CCF2AB2184B8160004A911 /* Whoops.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Whoops.mlmodel; sourceTree = "<group>"; };
+		57CCF2AD2184BBDF0004A911 /* OnDeviceClassification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnDeviceClassification.swift; sourceTree = "<group>"; };
+		57CCF2AF2184CA000004A911 /* MotionData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MotionData.swift; sourceTree = "<group>"; };
+		57CCF2B12184D0BC0004A911 /* FallDetected.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FallDetected.swift; sourceTree = "<group>"; };
+		57CCF2B32184F2FF0004A911 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		57CCF2B62184F94F0004A911 /* Fall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fall.swift; sourceTree = "<group>"; };
+		57CCF2B82184F9A50004A911 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		57CCF2BA21850D740004A911 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		57CCF2BC218620CA0004A911 /* gt-pressura-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "gt-pressura-regular.ttf"; sourceTree = "<group>"; };
+		57CCF2BE218620D60004A911 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		57E2DCF7216B4F0B00298825 /* Whoops.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whoops.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E2DCFA216B4F0B00298825 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		57E2DCFC216B4F0B00298825 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +77,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		57CCF2B52184F9420004A911 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				57CCF2B62184F94F0004A911 /* Fall.swift */,
+				57CCF2B82184F9A50004A911 /* Setting.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		57E2DCEE216B4F0B00298825 = {
 			isa = PBXGroup;
 			children = (
@@ -82,16 +109,24 @@
 		57E2DCF9216B4F0B00298825 /* Whoops */ = {
 			isa = PBXGroup;
 			children = (
-				572D6B04216FCC4300E3BF14 /* Assets.xcassets */,
+				57CCF2B52184F9420004A911 /* Models */,
+				57CCF2B32184F2FF0004A911 /* Assets.xcassets */,
+				57CCF2BC218620CA0004A911 /* gt-pressura-regular.ttf */,
+				57CCF2BE218620D60004A911 /* Roboto-Regular.ttf */,
+				57CCF2AB2184B8160004A911 /* Whoops.mlmodel */,
 				57E2DCFA216B4F0B00298825 /* AppDelegate.swift */,
 				572D6B06216FCF3C00E3BF14 /* StatisticsViewController.swift */,
 				57E2DCFC216B4F0B00298825 /* ViewController.swift */,
 				572D6B0821720E7500E3BF14 /* MQTTAzureClient.swift */,
-				572D6AFD216B514700E3BF14 /* AniaViewController.swift */,
+				572D6AFD216B514700E3BF14 /* SettingViewController.swift */,
 				57E2DCFE216B4F0B00298825 /* Main.storyboard */,
 				57E2DD06216B4F0D00298825 /* LaunchScreen.storyboard */,
 				57E2DD09216B4F0D00298825 /* Info.plist */,
 				57E2DD01216B4F0B00298825 /* Whoops.xcdatamodeld */,
+				57CCF2AD2184BBDF0004A911 /* OnDeviceClassification.swift */,
+				57CCF2AF2184CA000004A911 /* MotionData.swift */,
+				57CCF2B12184D0BC0004A911 /* FallDetected.swift */,
+				57CCF2BA21850D740004A911 /* DateExtension.swift */,
 			);
 			path = Whoops;
 			sourceTree = "<group>";
@@ -165,8 +200,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				57E2DD08216B4F0D00298825 /* LaunchScreen.storyboard in Resources */,
-				572D6B05216FCC4400E3BF14 /* Assets.xcassets in Resources */,
+				57CCF2B42184F2FF0004A911 /* Assets.xcassets in Resources */,
+				57CCF2BF218620D60004A911 /* Roboto-Regular.ttf in Resources */,
 				57E2DD00216B4F0B00298825 /* Main.storyboard in Resources */,
+				57CCF2BD218620CA0004A911 /* gt-pressura-regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,6 +240,8 @@
 				"${BUILT_PRODUCTS_DIR}/AzureIoTuAmqp/AzureIoTuAmqp.framework",
 				"${BUILT_PRODUCTS_DIR}/AzureIoTuMqtt/AzureIoTuMqtt.framework",
 				"${BUILT_PRODUCTS_DIR}/EVReflection/EVReflection.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -211,6 +250,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AzureIoTuAmqp.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AzureIoTuMqtt.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EVReflection.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -224,12 +265,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57CCF2B22184D0BC0004A911 /* FallDetected.swift in Sources */,
+				57CCF2AE2184BBDF0004A911 /* OnDeviceClassification.swift in Sources */,
+				57CCF2B92184F9A50004A911 /* Setting.swift in Sources */,
 				572D6B0921720E7500E3BF14 /* MQTTAzureClient.swift in Sources */,
+				57CCF2AC2184B8160004A911 /* Whoops.mlmodel in Sources */,
+				57CCF2BB21850D740004A911 /* DateExtension.swift in Sources */,
+				57CCF2B72184F94F0004A911 /* Fall.swift in Sources */,
 				57E2DD03216B4F0B00298825 /* Whoops.xcdatamodeld in Sources */,
+				57CCF2B02184CA000004A911 /* MotionData.swift in Sources */,
 				572D6B07216FCF3C00E3BF14 /* StatisticsViewController.swift in Sources */,
 				57E2DCFD216B4F0B00298825 /* ViewController.swift in Sources */,
 				57E2DCFB216B4F0B00298825 /* AppDelegate.swift in Sources */,
-				572D6AFE216B514700E3BF14 /* AniaViewController.swift in Sources */,
+				572D6AFE216B514700E3BF14 /* SettingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
